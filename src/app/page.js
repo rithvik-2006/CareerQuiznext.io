@@ -128,7 +128,7 @@ function App() {
     ) {
       return (
         <div>
-          <h1>You have a Bright Future in Telecom Services</h1>
+          <h1 className=" flex flex-col gap-5 text-center text-semibold py-10 items-center">You have a Bright Future in Telecom Services</h1>
         </div>
       );
     } else if (
@@ -138,7 +138,7 @@ function App() {
     ) {
       return (
         <div>
-          <h1>You have a Bright Future in Embedded Systems</h1>
+          <h1 className=" flex flex-col gap-5 text-center text-semibold py-10 items-center">You have a Bright Future in Embedded Systems</h1>
         </div>
       );
     } else if (
@@ -148,7 +148,7 @@ function App() {
     ) {
       return (
         <div>
-          <h1>You have a Bright Future in Robotics</h1>
+          <h1 className=" flex flex-col gap-5 text-center text-semibold py-10 items-center">You have a Bright Future in Robotics</h1>
         </div>
       );
     } else if (
@@ -158,13 +158,13 @@ function App() {
     ) {
       return (
         <div>
-          <h1>You have a Bright Future in Network Services</h1>
+          <h1 className=" flex flex-col gap-5 text-center text-semibold py-10 items-center">You have a Bright Future in Network Services</h1>
         </div>
       );
     } else {
       return (
         <div>
-          <h1>Explore more to find your best fit!</h1>
+          
         </div>
       );
     }
@@ -172,10 +172,11 @@ function App() {
 
   return (
     <>
-      <h1>Career Quiz</h1>
-      <p>Questions: {questions.length}</p>
+      <h1 className="text-center items-center py-10">Career Quiz</h1>
+      <p className="text-center items-center py-10">Questions: {questions.length}</p>
       {questions.map((question, index) => (
-        <div key={question.id} className="question">
+        <div key={question.id} className="py-5 pl-5 question">
+          <p>Question {index + 1}</p>
           <h3 className="question">{question.question}</h3>
           <ul className="options">
             {question.options.map((option, optionIndex) => (
@@ -193,11 +194,11 @@ function App() {
           </ul>
         </div>
       ))}
-      <div>
+      <div className="text-center items-center py-10">
         <button onClick={handleSubmit}>Submit</button>
       </div>
       {scores && (
-        <div className="scores">
+        <div className="scores flex flex-col gap-5 text-center text-semibold py-10 items-center">
           <h2>Scores:</h2>
           <p>TS Score: {scores.tsScore + 1}</p>
           <p>Embedded Score: {scores.embeddedScore}</p>
@@ -205,7 +206,7 @@ function App() {
           <p>Network Score: {scores.networkScore}</p>
         </div>
       )}
-      <HandleFuture scores={scores} />
+      <HandleFuture  scores={scores} />
     </>
   );
 }
